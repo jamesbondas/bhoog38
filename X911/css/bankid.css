@@ -1,0 +1,169 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 1018px;
+}
+
+.u-section-1 .u-group-1 {
+  width: 584px;
+  min-height: 648px;
+  height: auto;
+  box-shadow: 0px 0px 8px 7px rgba(128,128,128,0.2);
+  margin: 78px 276px 60px auto;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 30px 24px;
+}
+
+.u-section-1 .u-image-1 {
+  width: 189px;
+  height: 41px;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: 400;
+  margin: 37px auto 0 0;
+}
+
+.u-section-1 .u-text-2 {
+  font-weight: 400;
+  margin: -29px 23px 0 auto;
+}
+
+.u-section-1 .u-text-3 {
+  font-weight: 400;
+  margin: 19px auto 0 0;
+}
+
+.u-section-1 .u-text-4 {
+  font-weight: 400;
+  margin: -29px 0 0 auto;
+}
+
+.u-section-1 .u-image-2 {
+  height: 64px;
+  margin: 30px 0 0;
+}
+
+.u-section-1 .u-text-5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-image-3 {
+  width: 383px;
+  height: 40px;
+  margin: 19px auto 0;
+}
+
+.u-section-1 .u-image-4 {
+  width: 338px;
+  height: 142px;
+  margin: 19px auto 0;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-group-1 {
+    margin-top: 106px;
+    margin-right: auto;
+    height: auto;
+  }
+
+  .u-section-1 .u-text-1 {
+    width: 167px;
+  }
+
+  .u-section-1 .u-text-3 {
+    width: 133px;
+  }
+
+  .u-section-1 .u-image-2 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-image-3 {
+    margin-top: 30px;
+  }
+
+  .u-section-1 .u-image-4 {
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-group-1 {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-group-1 {
+    width: 540px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-1 .u-image-2 {
+    height: 59px;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-text-5 {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-group-1 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 2px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 25px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 2px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 2px;
+  }
+
+  .u-section-1 .u-image-2 {
+    height: 37px;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-text-5 {
+    margin-top: -8px;
+  }
+
+  .u-section-1 .u-image-3 {
+    width: 320px;
+    height: 33px;
+    margin-top: 26px;
+  }
+
+  .u-section-1 .u-image-4 {
+    width: 320px;
+    height: 134px;
+    margin-top: 6px;
+  }
+}
